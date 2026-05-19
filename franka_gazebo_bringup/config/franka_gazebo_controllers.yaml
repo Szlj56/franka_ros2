@@ -27,6 +27,9 @@
       swerve_drive_controller:
         type: franka_mobile/SwerveDriveController
 
+      joint_impedance_sim_controller:                         
+        type: franka_mpc_controllers/JointImpedanceSimController  
+
 /**:
   joint_velocity_example_controller:
     ros__parameters:
@@ -101,3 +104,19 @@
       prefix: "tmrv0_2_"
       wheel_1_link_name: argo_drive_front_link
       wheel_2_link_name: argo_drive_rear_link
+
+/**:
+  joint_impedance_sim_controller:
+    ros__parameters:
+      type: franka_mpc_controllers/JointImpedanceSimController
+      joints:
+        - fr3_joint1
+        - fr3_joint2
+        - fr3_joint3
+        - fr3_joint4
+        - fr3_joint5
+        - fr3_joint6
+        - fr3_joint7
+      stiffness:    [4500.0, 4500.0, 3500.0, 3500.0, 2000.0, 2000.0, 2000.0]
+      damping:      [5000.0, 5000.0, 4000.0, 4000.0, 2500.0, 2500.0, 2500.0]
+      effort_limit: [87.0,   87.0,   87.0,   87.0,   12.0,   12.0,   12.0  ]

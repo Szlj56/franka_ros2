@@ -1,0 +1,11 @@
+<library path="franka_mpc_controllers">
+  <class
+    name="franka_mpc_controllers/JointImpedanceSimController"
+    type="franka_mpc_controllers::JointImpedanceSimController"
+    base_class_type="controller_interface::ControllerInterface">
+    <description>
+      Joint impedance controller for Franka in Ignition Gazebo.
+      Implements tau = K*(qd-q) - D*dq, matching MuJoCo affine actuator.
+    </description>
+  </class>
+</library>
